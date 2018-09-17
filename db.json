@@ -1,0 +1,99 @@
+{
+    "libraries": [
+        {
+            "id": 1,
+            "name": "كتابخانه عمومي يامچى",
+            "address": "مرند",
+            "type": "public",
+            "logoUrl": ""
+        },
+        {
+            "id": 2,
+            "name": "كتابخانه عمومی یزدانشهر",
+            "address": "نجف آباد",
+            "type": "public",
+            "logoUrl": ""
+        },
+        {
+            "id": 3,
+            "name": "کتابخانه گروه تاریخ دانشگاه تهران",
+            "address": "تهران",
+            "type": "university",
+            "logoUrl": ""
+        },
+        {
+            "id": 4,
+            "name": "كتابخانه مرکز تحقیقات و آموزش كشاورزی و منابع طبیعی",
+            "address": "قم",
+            "type": "specific",
+            "logoUrl": ""
+        },
+        {
+            "id": 5,
+            "name": "كتابخانه مركز ملی جهانی شدن",
+            "address": "تهران",
+            "type": "specific",
+            "logoUrl": ""
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "title": "سالاریها",
+            "imageUrl": "",
+            "isbn": "",
+            "writerId": 1,
+            "libraryId": 1
+        },
+        {
+            "id": 2,
+            "title": "53 نفر",
+            "imageUrl": "",
+            "isbn": "",
+            "writerId": 1,
+            "libraryId": 1
+        },
+        {
+            "id": 3,
+            "title": "چشمهایش",
+            "imageUrl": "",
+            "isbn": "",
+            "writerId": 1,
+            "libraryId": 2
+        }
+    ],
+    "writers": [
+        {
+            "id": 1,
+            "name": "بزرگ علوی",
+            "imageUrl": ""
+        },
+        {
+            "id": 2,
+            "name": "محمود دولت آبادی",
+            "imageUrl": ""
+        }
+    ],
+    "reviews": [
+        {
+            "id": 1,
+            "text": "کتاب سالاریها کتاب عالی است.",
+            "userId": 1,
+            "bookId": 1
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "مهدی چیت فروش یزدی",
+            "username": "09131590043",
+            "profileImageUrl": ""
+        },
+        {
+            "id": 2,
+            "name": "محمد چیت فروش یزدی",
+            "username": "09131561400",
+            "profileImageUrl": ""
+        }
+    ]
+}
