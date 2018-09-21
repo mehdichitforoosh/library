@@ -19,16 +19,33 @@ class HomeContent extends React.Component {
                 </div>
                 <div className="uk-section uk-section-default uk-section-large">
                     <div className="uk-container">
-                        <h3>Section Default</h3>
                         <div className="uk-grid-match uk-child-width-1-3@m" uk-grid="">
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            <div className="uk-card uk-card-default">
+                                <div className="uk-card-media-top">
+                                    <img className="uk-padding" src="images/advertising.png" alt="" />
+                                    <div className="uk-card-body">
+                                        <h3 className="uk-card-title">Media Top</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            <div className="uk-card uk-card-default">
+                                <div className="uk-card-media-top">
+                                    <img className="uk-padding" src="images/business-plan.png" alt="" />
+                                    <div className="uk-card-body">
+                                        <h3 className="uk-card-title">Media Top</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            <div className="uk-card uk-card-default">
+                                <div className="uk-card-media-top">
+                                    <img className="uk-padding" src="images/project-management.png" alt="" />
+                                    <div className="uk-card-body">
+                                        <h3 className="uk-card-title">Media Top</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
