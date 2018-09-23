@@ -40,25 +40,28 @@
         {
             "id": 1,
             "title": "سالاریها",
-            "imageUrl": "",
+            "imageUrl": "/images/alavi-salariha.jpg",
             "isbn": "",
             "writerId": 1,
+            "writerName":"بزرگ علوی",
             "libraryId": 1
         },
         {
             "id": 2,
             "title": "53 نفر",
             "imageUrl": "",
-            "isbn": "",
+            "isbn": "/images/alavi-53.jpg",
             "writerId": 1,
+            "writerName":"بزرگ علوی",
             "libraryId": 1
         },
         {
             "id": 3,
             "title": "چشمهایش",
-            "imageUrl": "",
+            "imageUrl": "/images/alavi-cheshmhayash",
             "isbn": "",
             "writerId": 1,
+            "writerName":"بزرگ علوی",
             "libraryId": 2
         },
         {
@@ -67,14 +70,16 @@
             "imageUrl": "",
             "isbn": "",
             "writerId": 2,
+            "writerName":"محمود دولت آبادی",
             "libraryId": 2
         },
         {
             "id": 5,
             "title": "جای خالی سلوچ",
-            "imageUrl": "",
+            "imageUrl": "/images/dolatabadi-solooch.jpg",
             "isbn": "",
             "writerId": 2,
+            "writerName":"محمود دولت آبادی",
             "libraryId": 3
         }
     ],
