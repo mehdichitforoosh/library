@@ -49,8 +49,8 @@
         {
             "id": 2,
             "title": "53 نفر",
-            "imageUrl": "",
-            "isbn": "/images/alavi-53.jpg",
+            "imageUrl": "/images/alavi-53.jpg",
+            "isbn": "",
             "writerId": 1,
             "writerName":"بزرگ علوی",
             "libraryId": 1
