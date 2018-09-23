@@ -21,21 +21,14 @@ class ListBook extends React.Component {
             <div className="uk-container uk-padding">
                 <Link className="uk-button uk-button-primary" to="/books/add">افزودن کتاب</Link>
                 <hr />
-                <div className="uk-child-width-1-3@m" uk-grid="">
+                <div className="uk-child-width-1-3@m" uk-grid="" uk-height-match="target: > div > .uk-card">
                     {this.state.books.map((book) => {
-                        let imageUrl;
-                        console.log("url :", book.imageUrl);
-                        if (book.imageUrl) {
-                            imageUrl = book.imageUrl;
-                        } else {
-                            imageUrl = "/images/no-image.png";
-                        }
-                        console.log("url :", imageUrl);
+                        let imageUrl = (book.imageUrl) ? book.imageUrl:"/images/no-image.png";
                         return (
                             <div key={book.id}>
-                                <div className="uk-card uk-card-default">
+                                <div className="uk-card uk-card-default ">
                                     <div className="uk-card-media-top">
-                                        <img src={imageUrl} alt={book.title} />
+                                        <img className="uk-height-max-medium uk-width-1-1" src={imageUrl} alt={book.title} />
                                     </div>
                                     <div className="uk-card-body">
                                         <h3 className="uk-card-title">{book.title}</h3>
