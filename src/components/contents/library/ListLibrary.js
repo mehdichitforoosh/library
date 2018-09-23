@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class ListLibrary extends React.Component {
 
@@ -18,7 +19,7 @@ class ListLibrary extends React.Component {
     render() {
         return (
             <div className="uk-container uk-padding">
-                <button className="uk-button uk-button-primary">افزودن کتابخانه</button>
+                <Link className="uk-button uk-button-primary" to="/libraries/add">افزودن کتابخانه</Link>
                 <hr />
                 <table className="uk-table uk-table-striped">
                     <thead>
@@ -29,9 +30,9 @@ class ListLibrary extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.libraries.map((library, index) => {
+                        {this.state.libraries.map((library) => {
                             return (
-                                <tr key={index}>
+                                <tr key={library.id}>
                                     <td>{library.id}</td>
                                     <td>{library.name}</td>
                                     <td>{library.address}</td>
