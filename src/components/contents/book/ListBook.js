@@ -23,11 +23,19 @@ class ListBook extends React.Component {
                 <hr />
                 <div className="uk-child-width-1-3@m" uk-grid="">
                     {this.state.books.map((book) => {
+                        let imageUrl;
+                        console.log("url :", book.imageUrl);
+                        if (book.imageUrl) {
+                            imageUrl = book.imageUrl;
+                        } else {
+                            imageUrl = "/images/no-image.png";
+                        }
+                        console.log("url :", imageUrl);
                         return (
                             <div key={book.id}>
                                 <div className="uk-card uk-card-default">
                                     <div className="uk-card-media-top">
-                                        <img src={book.imageUrl} alt={book.title} />
+                                        <img src={imageUrl} alt={book.title} />
                                     </div>
                                     <div className="uk-card-body">
                                         <h3 className="uk-card-title">{book.title}</h3>
