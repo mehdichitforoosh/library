@@ -34,6 +34,55 @@
             "address": "تهران",
             "type": "specific",
             "logoUrl": ""
+        },
+        {
+            "id": 6,
+            "name": "كتابخانه وزيري يزد ",
+            "address": "یزد",
+            "type": "public",
+            "logoUrl": ""
+        },
+        {
+            "id": 7,
+            "name": "كتابخانه عمومي مشاركتي بلوك 11 شهرك اكباتان",
+            "address": "تهران",
+            "type": "public",
+            "logoUrl": ""
+        },
+        {
+            "id": 8,
+            "name": "كتابخانه تخصصي حاج امام قلي پورقاز",
+            "address": "گلستان",
+            "type": "specific",
+            "logoUrl": ""
+        },
+        {
+            "id": 9,
+            "name": "كتابخانه عمومي امام جعفر صادق (ع) ",
+            "address": "فارس",
+            "type": "public",
+            "logoUrl": ""
+        },
+        {
+            "id": 10,
+            "name": "كتابخانه اختصاصي محمد عبدلي",
+            "address": "مهاباد",
+            "type": "specific",
+            "logoUrl": ""
+        },
+        {
+            "id": 11,
+            "name": "كتابخانه اختصاصي آيت الله صدوقي",
+            "address": "یزد",
+            "type": "specific",
+            "logoUrl": ""
+        },
+        {
+            "id": 12,
+            "name": "كتابخانه محقق طباطبايي",
+            "address": "قم",
+            "type": "specific",
+            "logoUrl": ""
         }
     ],
     "books": [
@@ -43,7 +92,7 @@
             "imageUrl": "/images/alavi-salariha.jpg",
             "isbn": "",
             "writerId": 1,
-            "writerName":"بزرگ علوی",
+            "writerName": "بزرگ علوی",
             "libraryId": 1
         },
         {
@@ -52,7 +101,7 @@
             "imageUrl": "/images/alavi-53.jpg",
             "isbn": "",
             "writerId": 1,
-            "writerName":"بزرگ علوی",
+            "writerName": "بزرگ علوی",
             "libraryId": 1
         },
         {
@@ -61,7 +110,7 @@
             "imageUrl": "/images/alavi-cheshmhayash.jpg",
             "isbn": "",
             "writerId": 1,
-            "writerName":"بزرگ علوی",
+            "writerName": "بزرگ علوی",
             "libraryId": 2
         },
         {
@@ -70,7 +119,7 @@
             "imageUrl": "",
             "isbn": "",
             "writerId": 2,
-            "writerName":"محمود دولت آبادی",
+            "writerName": "محمود دولت آبادی",
             "libraryId": 2
         },
         {
@@ -79,7 +128,7 @@
             "imageUrl": "/images/dolatabadi-solooch.jpg",
             "isbn": "",
             "writerId": 2,
-            "writerName":"محمود دولت آبادی",
+            "writerName": "محمود دولت آبادی",
             "libraryId": 3
         }
     ],
