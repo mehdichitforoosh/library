@@ -9,7 +9,7 @@ class AddLibrary extends React.Component {
                     <fieldset className="uk-fieldset">
                         <legend className="uk-legend">کتابخانه جدید</legend>
                         <div className="uk-margin">
-                            <input class="uk-input uk-form-width-large" type="text" placeholder="نام" />
+                            <input className="uk-input uk-form-width-large" type="text" placeholder="نام" />
                         </div>
                         <div className="uk-margin">
                             <select className="uk-select uk-form-width-large">
