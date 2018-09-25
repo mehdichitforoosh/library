@@ -1,19 +1,53 @@
 import React from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import queryString from 'query-string';
+import Pagination from "../../commons/Pagination";
 
 class ListLibrary extends React.Component {
 
-    state = {
-        libraries: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentPage: 1,
+            itemsPerPageCount: 10,
+            totalItemsCount: 0,
+            libraries: []
+        }
+        this.paginate = this.paginate.bind(this);
+    }
+
+    paginate(selectedPageNumber) {
+        const start = (selectedPageNumber - 1) * this.state.itemsPerPageCount;
+        const limit = this.state.itemsPerPageCount;
+        this.props.history.push(`/libraries?start=${start}&limit=${limit}`);
+        this.getLibraries(start, limit);
+        this.setState({
+            currentPage: selectedPageNumber
+        });
+    }
+
+    getLibraries(start, limit) {
+        const params = {
+            _start: start,
+            _limit: limit
+        }
+        Axios.get(`https://my-json-server.typicode.com/mehdichitforoosh/library/libraries`, { params })
+            .then(res => {
+                const libraries = res.data;
+                // const totalItemsCount = rest.data.count;
+                const totalItemsCount = 12;
+                //should be checked
+                const currentPage = Math.ceil(start / this.state.itemsPerPageCount) + 1;
+                this.setState({ currentPage, totalItemsCount, libraries });
+            });
     }
 
     componentDidMount() {
-        Axios.get(`https://my-json-server.typicode.com/mehdichitforoosh/library/libraries`)
-            .then(res => {
-                const libraries = res.data;
-                this.setState({ libraries });
-            })
+        const values = queryString.parse(this.props.location.search);
+        const start = (values.start && values.start > 0) ? values.start : 0;
+        const limit = (values.limit && values.limit > 0) ? values.limit : 10;
+        this.getLibraries(start, limit);
     }
 
     render() {
@@ -41,19 +75,11 @@ class ListLibrary extends React.Component {
                         })}
                     </tbody>
                 </table>
-                <ul className="uk-pagination uk-flex-center" uk-margin="">
-                    <li><a href="#"><span uk-pagination-previous=""></span></a></li>
-                    <li><a href="#">1</a></li>
-                    <li className="uk-disabled"><span>...</span></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li className="uk-active"><span>7</span></li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#"><span uk-pagination-next=""></span></a></li>
-                </ul>
+                <Pagination totalItemsCount={this.state.totalItemsCount} itemsPerPageCount={10}
+                    currentPage={this.state.currentPage} renderOnOnlyOnePage={true} callback={this.paginate} />
             </div>
         );
     }
 }
 
-export default ListLibrary;
+export default withRouter(ListLibrary);
