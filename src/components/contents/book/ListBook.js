@@ -28,7 +28,7 @@ class ListBook extends React.Component {
                             <div key={book.id}>
                                 <div className="uk-card uk-card-default ">
                                     <div className="uk-card-media-top">
-                                        <img className="uk-height-max-medium uk-width-1-1" src={imageUrl} alt={book.title} />
+                                        <img className="uk-height-medium uk-width-1-1" src={imageUrl} alt={book.title} />
                                     </div>
                                     <div className="uk-card-body">
                                         <h3 className="uk-card-title">{book.title}</h3>
