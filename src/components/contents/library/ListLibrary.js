@@ -55,29 +55,35 @@ class ListLibrary extends React.Component {
             <div className="uk-container uk-padding">
                 <Link className="uk-button uk-button-primary" to="/libraries/add">افزودن کتابخانه</Link>
                 <hr />
-                <table className="uk-table uk-table-striped">
-                    <thead>
-                        <tr>
-                            <th>شناسه</th>
-                            <th>نام</th>
-                            <th>آدرس</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.libraries.map((library) => {
-                            return (
-                                <tr key={library.id}>
-                                    <td>{library.id}</td>
-                                    <td>{library.name}</td>
-                                    <td>{library.address}</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-                <Pagination totalItemsCount={this.state.totalItemsCount} itemsPerPageCount={10}
-                    currentPage={this.state.currentPage} renderOnOnlyOnePage={true} callback={this.paginate} />
-            </div>
+                {this.state.totalItemsCount > 0 &&
+                    <table className="uk-table uk-table-striped">
+                        <thead>
+                            <tr>
+                                <th>شناسه</th>
+                                <th>نام</th>
+                                <th>آدرس</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.libraries.map((library) => {
+                                return (
+                                    <tr key={library.id}>
+                                        <td>{library.id}</td>
+                                        <td>{library.name}</td>
+                                        <td>{library.address}</td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                }
+                {this.state.totalItemsCount > 0 &&
+                    <Pagination totalItemsCount={this.state.totalItemsCount} itemsPerPageCount={10}
+                        currentPage={this.state.currentPage} renderOnOnlyOnePage={true} callback={this.paginate} />
+
+                }
+
+            </div >
         );
     }
 }
