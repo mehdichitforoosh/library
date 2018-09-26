@@ -1,4 +1,6 @@
 import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 class Pagination extends React.Component {
 
@@ -17,16 +19,18 @@ class Pagination extends React.Component {
     }
 
     getPageCount() {
-        return Math.ceil(this.props.totalItemsCount / this.props.itemsPerPageCount);
+        const { totalItemsCount, itemsPerPageCount } = this.props;
+        return Math.ceil(totalItemsCount / itemsPerPageCount);
     }
 
     getPageNumbers() {
+        const { pageRange, currentPage } = this.props;
         let pageNumbers = [];
         let pageCount = this.getPageCount();
-        let rightDistance = Math.floor(this.props.pageRange / 2);
-        let firstIndex = this.props.currentPage - rightDistance;
-        if (pageCount > this.props.pageRange) {
-            let lastIndex = firstIndex + this.props.pageRange;
+        let rightDistance = Math.floor(pageRange / 2);
+        let firstIndex = currentPage - rightDistance;
+        if (pageCount > pageRange) {
+            let lastIndex = firstIndex + pageRange;
             let index = firstIndex;
             while (index < lastIndex) {
                 pageNumbers.push(index);
@@ -49,20 +53,28 @@ class Pagination extends React.Component {
 
     nextPage() {
         //Check next page exist
+        const { currentPage } = this.props;
         const pageCount = this.getPageCount();
-        const nextPage = this.props.currentPage + 1;
-
+        const nextPage = currentPage + 1;
         if (nextPage <= pageCount) {
             this.props.callback(nextPage);
         }
     }
 
+    getClassNames(obj) {
+        return classNames({
+            'uk-active': obj.pageNumber === obj.currentPage,
+            'uk-disabled': obj.nextPage > obj.pageCount
+        });
+    }
+
     render() {
-        const nextPage = this.props.currentPage + 1;
+        const { currentPage, renderOnOnlyOnePage } = this.props;
+        const nextPage = currentPage + 1;
         const pageCount = this.getPageCount();
         const pageNumbers = this.getPageNumbers();
         let render = true;
-        if (pageCount === 1 && !this.props.renderOnOnlyOnePage) {
+        if (pageCount === 1 && !renderOnOnlyOnePage) {
             render = false;
         }
         return (
@@ -75,13 +87,13 @@ class Pagination extends React.Component {
                     </li>
                     {pageNumbers.map((pageNumber, index) => {
                         return (
-                            <li key={index} className={pageNumber === this.props.currentPage ? `uk-active` : null}>
+                            <li key={index} className={this.getClassNames({ pageNumber, currentPage })}>
                                 <a onClick={() => this.props.callback(pageNumber)} >{pageNumber}</a>
                             </li>
                         );
                     })}
-                    <li className={(nextPage > pageCount) ? 'uk-disabled' : null}>
-                    {/* Check for if-else */}
+                    <li className={this.getClassNames({ nextPage, pageCount })}>
+                        {/* Check for if-else */}
                         <a onClick={(nextPage <= pageCount) ? () => this.nextPage() : null}>
                             <span uk-pagination-next=""></span>
                         </a>
@@ -89,6 +101,14 @@ class Pagination extends React.Component {
                 </ul>)
         );
     }
+}
+
+Pagination.propTypes = {
+    itemsPerPageCount: PropTypes.number,
+    totalItemsCount: PropTypes.number.isRequired,
+    pageRange: PropTypes.number,
+    currentPage: PropTypes.number.isRequired,
+    renderOnOnlyOnePage: PropTypes.bool
 }
 
 export default Pagination;
