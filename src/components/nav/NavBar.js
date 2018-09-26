@@ -5,7 +5,7 @@ class NavBar extends React.Component {
     render() {
 
         const navBarStyle= {
-            boxShadow: '0 8px 6px -6px #ccc',
+            boxShadow: '0 8px 6px -6px #aaa',
             //Todo Add webkit or moz ???? in #CssInJS
         }
 

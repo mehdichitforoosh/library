@@ -5,7 +5,7 @@ class HomeContent extends React.Component {
     render() {
 
         const parallazStyle = {
-            backgroundImage: "url('/images/back.jpg')"
+            backgroundImage: "url('/images/top-parallax.jpg')"
         }
         return (
             <div>
@@ -23,7 +23,7 @@ class HomeContent extends React.Component {
                             <div>
                                 <div className="uk-card uk-card-default">
                                     <div className="uk-card-media-top">
-                                        <img src="images/advertising.png" alt="" />
+                                        <img className="uk-height-medium uk-margin-auto" src="images/advertising.png" alt="" />
                                         <div className="uk-card-body">
                                             <h3 className="uk-card-title">Media Top</h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
